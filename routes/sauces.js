@@ -11,4 +11,7 @@ router.get('/', saucesCtrl.test);
 
 router.get('/test', saucesCtrl.test2)
 
+router.post('/', saucesCtrl.createSauce);
+
 module.exports = router;
+

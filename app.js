@@ -10,7 +10,8 @@ const app = express();
 
 const mongoose = require('mongoose');
 
-const sauces = require('./models/sauces');
+
+const user = require('./models/user');
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -22,6 +23,8 @@ app.use((req, res, next) => {
   app.use('/api/auth', userRoute)
 
   app.use(bodyParser.json())
+
+  
 
   app.use('/api/sauces', saucesRoute);
 
