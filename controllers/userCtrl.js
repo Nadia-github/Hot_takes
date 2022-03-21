@@ -1,7 +1,7 @@
 
 const req = require('express/lib/request');
 const res = require('express/lib/response');
-const user = require('./models/user');
+const user = require('../models/user');
 
 exports.createUser = (req, res) => {
     delete req.body._id;

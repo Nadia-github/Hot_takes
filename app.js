@@ -2,6 +2,8 @@ const userRoute = require ('./routes/user')
 
 const saucesRoute = require ('./routes/sauces')
 
+//const sauceSchema = require('./models/sauces');
+
 const express = require ('express');
 
 const bodyParser = require ('body-parser');
@@ -22,7 +24,7 @@ app.use((req, res, next) => {
 
   app.use('/api/auth', userRoute)
 
-  app.use(bodyParser.json())
+  app.use(express.json())
 
   
 
