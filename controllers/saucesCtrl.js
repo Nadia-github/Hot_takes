@@ -1,4 +1,4 @@
-const sauces = require('./models/sauces');
+const sauces = require('../models/sauces');
 
 exports.test = (req, res) => res.status(200).json({message : 'coucou'})
 
