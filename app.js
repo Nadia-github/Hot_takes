@@ -22,11 +22,9 @@ app.use((req, res, next) => {
     next();
   });
 
-  app.use('/api/auth', userRoute)
-
   app.use(express.json())
 
-  
+  app.use('/api/auth', userRoute)
 
   app.use('/api/sauces', saucesRoute);
 

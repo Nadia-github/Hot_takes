@@ -1,12 +1,13 @@
 
 const req = require('express/lib/request');
 const res = require('express/lib/response');
-const user = require('../models/user');
+const User = require('../models/user');
 
 exports.createUser = (req, res) => {
+  console.log(req.body);
     delete req.body._id;
     /*req.body.password*/;
-    const user = new user ({
+    const user = new User ({
       ...req.body
     });
     user.save()
