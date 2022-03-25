@@ -17,7 +17,7 @@ router.put('/:id', saucesCtrl.modifySauce);
 
 router.delete('/:id', saucesCtrl.deleteSauce);
 
-//router.post('/:id/like', saucesCtrl.likeSauce);
+router.post('/:id/like', saucesCtrl.likeSauce);
 
 module.exports = router;
 
