@@ -3,9 +3,11 @@ const fs = require("fs");
 
 /* Enregistre dans la BDD la sauce que l'utilisateur a créer */
 exports.createSauce = (req, res) => {
+  const sauceObject = JSON.parse(req.body.Sauce);
   delete req.body._id;
   const sauce = new Sauce({
-    ...req.body,
+    ...sauceObject,
+    imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
   });
   sauce
     .save()
@@ -29,19 +31,14 @@ exports.findSauce = (req, res) => {
 
 // met à jour la sauce et retourne un message d'erreur le cas échéant
 exports.modifySauce = (req, res) => {
-  Sauce.findOne({ _id: req.params.id }).then((sauce) => {
-    //récupère le chemin physique de l'image
-    const filename = sauce.imageUrl.split("/images/")[1];
-    // supprime l'image des dossiers du serveur
-    fs.unlink(`images/${filename}`, () => {
-      Sauce.updateOne(
-        { _id: req.params.id },
-        { ...req.body, _id: req.params.id }
-      )
-        .then(() => res.status(200).json({ message: "Objet modifié !" }))
-        .catch((error) => res.status(400).json({ error }));
-    });
-  });
+  const sauceObject = req.file ?
+    {
+      ...JSON.parse(req.body.thing),
+      imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+    } : { ...req.body };
+  Sauce.updateOne({ _id: req.params.id }, { ...thingObject, _id: req.params.id })
+    .then(() => res.status(200).json({ message: 'Objet modifié !'}))
+    .catch(error => res.status(400).json({ error }));
 };
 
 /* supprime la sauce dont l'id est en paramètre */
