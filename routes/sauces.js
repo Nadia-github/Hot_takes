@@ -21,7 +21,6 @@ router.delete('/:id', auth, saucesCtrl.deleteSauce);
 
 router.post('/:id/like', auth, saucesCtrl.likeSauce);
 
-router.use('/images', express.static(path.join(__dirname, 'images')));
 
 module.exports = router;
 

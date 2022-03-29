@@ -3,7 +3,8 @@ const fs = require("fs");
 
 /* Enregistre dans la BDD la sauce que l'utilisateur a créer */
 exports.createSauce = (req, res) => {
-  const sauceObject = JSON.parse(req.body.Sauce);
+  const sauceObject = JSON.parse(req.body.sauce);
+  console.log(sauceObject);
   delete req.body._id;
   const sauce = new Sauce({
     ...sauceObject,
