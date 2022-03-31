@@ -34,10 +34,10 @@ exports.findSauce = (req, res) => {
 exports.modifySauce = (req, res) => {
   const sauceObject = req.file ?
     {
-      ...JSON.parse(req.body.thing),
+      ...JSON.parse(req.body.sauce),
       imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
     } : { ...req.body };
-  Sauce.updateOne({ _id: req.params.id }, { ...thingObject, _id: req.params.id })
+  Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
     .then(() => res.status(200).json({ message: 'Objet modifié !'}))
     .catch(error => res.status(400).json({ error }));
 };
@@ -79,7 +79,7 @@ exports.likeSauce = (req, res, then) => {
         case 0:
           /* annule le vote : supprime le userId du array ou il se trouve et décrémente le 
                   likes ou dislikes selon la présence ou non de l'id dans le array*/
-
+                  
           break;
         case 1:
           /* aime : incrémente les likes et ajoute le userId au array usersLiked*/
