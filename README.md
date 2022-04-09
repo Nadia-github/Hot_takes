@@ -16,7 +16,7 @@ Ce repository contient uniquement le back-end.
 Le Frontend est à télécharger séparément sur github via https://github.com/OpenClassrooms-Student-Center/Web-Developer-P6.
 
 #### Faire tourner le Back-end
-Une fois le code téléchargé, exécuter “npm install” et chargez le package nodemon "npm install -g nodemon" à partir de la racine du projet.  
+Une fois le code téléchargé, exécuter “npm install” et charger le package nodemon "npm install -g nodemon" à partir de la racine du projet.  
 Exécuter le serveur nodemon pour faire tourner votre API.
 
 #### Faire tourner le Front-end
