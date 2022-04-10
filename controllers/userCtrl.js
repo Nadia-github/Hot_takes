@@ -34,6 +34,7 @@ exports.login = (req, res, next) => {
           }
           res.status(200).json({
             userId: user._id,
+            // jwt.sign => on va créer un token avec premier argument le user._id et le second argument la clé de cryptage
             token: jwt.sign({ userId: user._id }, process.env.TOKEN_SECRET, {
               expiresIn: "24h",
             }),
