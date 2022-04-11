@@ -17,7 +17,7 @@ Le Frontend est à télécharger séparément sur github via https://github.com/
 
 #### Faire tourner le Back-end
 Une fois le code téléchargé, exécuter “npm install” et charger le package nodemon "npm install -g nodemon" à partir de la racine du projet.  
-Renommer le fichier ".env.exemple" en ".env" et ajouter les données sécurisées (données d'accès à la base de données et valeur du token)
+Renommer le fichier ".env.exemple" en ".env" et ajouter les données sécurisées (données d'accès à la base de données et valeur du token).  
 Exécuter le serveur nodemon pour faire tourner votre API.
 
 #### Faire tourner le Front-end
