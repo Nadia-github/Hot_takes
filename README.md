@@ -10,6 +10,8 @@ Le sujet du projet 6, du parcours Développeur web chez Openclassrooms, porte su
 - Stocker des données de manière sécurisée
 - Mettre en œuvre des opérations CRUD de manière sécurisée  
 
+Une démonstration de mon projet est disponible en ligne : https://www.youtube.com/watch?v=pSZcJyX26C8
+
 ### INSTALLATION
 
 Ce repository contient uniquement le back-end. 
